@@ -33,10 +33,10 @@ vim.g.maplocalleader = " "
  keymap("n", "K", "N", opts) --know (search)
 
 -- Better window navigation
--- keymap("n", "<C-h>", "<C-w>h", opts)
--- keymap("n", "<C-j>", "<C-w>j", opts)
--- keymap("n", "<C-k>", "<C-w>k", opts)
--- keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<C-n>", "<C-w>n", opts)
+keymap("n", "<C-e>", "<C-w>e", opts)
+keymap("n", "<C-i>", "<C-w>i", opts)
+keymap("n", "<C-o>", "<C-w>o", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -49,8 +49,8 @@ keymap("n", "<S-o>", ":bnext<CR>", opts)
 keymap("n", "<S-n>", ":bprevious<CR>", opts)
 
 -- Move text up and down
-keymap("n", "<A-Up>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-Down>", "<Esc>:m .-2<CR>==gi", opts)
+keymap("n", "<A-Up>", "<Esc>:m .+1<CR>==gi", opts)
 
 -- INSERT --
 -- Press jk fast to enter
@@ -75,8 +75,7 @@ keymap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
 -- Better terminal navigation
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+keymap("t", "<C-n>", "<C-\\><C-N><C-w>h", term_opts)
+keymap("t", "<C-e>", "<C-\\><C-N><C-w>j", term_opts)
+keymap("t", "<C-i>", "<C-\\><C-N><C-w>k", term_opts)
+keymap("t", "<C-o>", "<C-\\><C-N><C-w>l", term_opts)
