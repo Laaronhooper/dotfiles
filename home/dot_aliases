@@ -1,0 +1,30 @@
+# Aliases
+alias .....="cd ../../../.."
+alias ....="cd ../../.."
+alias ...="cd ../.."
+alias ..="cd .."
+alias aliasrc="nvim /$HOME/.local/share/chezmoi/home/dot_aliases"
+alias cfa='chezmoi --force apply; source ~/.zshrc'
+alias chrome='open -a Google\ Chrome'
+alias config='cd /$HOME/.local/share/chezmoi/home/'
+alias fan='open -a Macs\ Fan\ Control'
+alias frappe='kitty +kitten themes --reload-in=all Catppuccin\ Kitty\ Frappe'
+alias gfrh='git fetch; git reset --hard FETCH_HEAD'
+alias goland='/usr/local/bin/goland'
+alias grep='grep --color=auto'
+alias gruvdark='kitty +kitten themes --reload-in=all Gruvbox Dark'
+alias gsmp='git stash; git switch main; git pull':
+alias kittyrc='nvim /$HOME/.local/share/chezmoi/home/dot_kitty/kitty.conf'
+alias l='ls -lah'
+alias latte='kitty +kitten themes --reload-in=all Catppuccin\ Kitty\ Latte'
+alias lg='lazygit'
+alias macchiato='kitty +kitten themes --reload-in=all Catppuccin\ Kitty\ Macchiato'
+alias mocha='kitty +kitten themes --reload-in=all Catppuccin\ Kitty\ Mocha'
+alias myip='curl http://ipecho.net/plain; echo'
+alias nv='nvim'
+alias nvimrc='cd /$HOME/.local/share/chezmoi/home/nvim; nvim'
+alias safari='open -a Safari'
+alias skhdrc='nvim /$HOME/.local/share/chezmoi/home/dot_skhdrc'
+alias tmuxrc='nvim /$HOME/.local/share/chezmoi/home/dot_tmux.conf'
+alias yabairc='nvim /$HOME/.local/share/chezmoi/home/dot_yabairc'
+alias zshrc='nvim /$HOME/.local/share/chezmoi/home/dot_zshrc.tmpl'

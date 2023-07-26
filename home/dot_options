@@ -1,0 +1,12 @@
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE 
+setopt HIST_SAVE_NO_DUPS
+setopt auto_cd
+setopt autocd
+setopt histignorespace
+setopt no_flow_control
+setopt rm_star_silent
+unsetopt beep 

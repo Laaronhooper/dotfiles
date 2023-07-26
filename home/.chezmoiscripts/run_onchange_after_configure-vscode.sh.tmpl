@@ -1,25 +1,14 @@
-{{ if and (eq .chezmoi.os "darwin" "linux") (not .headless) -}}
+{{ if and (eq .chezmoi.os "darwin" "linux") -}}
 
 {{ $extensions := list
      "asvetliakov.vscode-neovim"
+     "bungcip.better-toml"
      "eamodio.gitlens"
-     "EditorConfig.EditorConfig"
      "golang.go"
      "jinliming2.vscode-go-template"
-     "ms-azuretools.vscode-docker"
      "ms-python.python"
-     "ms-vscode-remote.remote-containers"
-     "ms-vscode-remote.remote-ssh"
-     "ms-vscode-remote.remote-ssh-edit"
-     "ms-vscode-remote.vscode-remote-extensionpack"
-     "ms-vscode.cpptools"
-     "redhat.vscode-yaml"
-     "stkb.rewrap"
-     "streetsidesoftware.code-spell-checker"
-     "tamasfe.even-better-toml"
-     "twpayne.vscode-testscript"
-     "Tyriar.sort-lines"
-     "yzhang.markdown-all-in-one" -}}
+     "yzhang.markdown-all-in-one"
+     "jdinhlife.gruvbox" -}}
 
 #!/bin/bash
 

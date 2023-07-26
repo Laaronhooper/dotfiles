@@ -19,41 +19,18 @@
     url = "https://github.com/romkatv/powerlevel10k/archive/v1.18.0.tar.gz"
     exact = true
     stripComponents = 1
-{{ if eq .osid "linux-ubuntu" }}
-[".local/bin/nvim"]
+["Library/Keyboard Layouts/ColemakDHm.bundle"]
+    type = "archive"
+    url = "https://github.com/narze/Colemak-DHm/releases/download/stable/ColemakDHm.bundle.zip"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "2160h"
+[".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+  type = "archive"
+  url = "https://github.com/zsh-users/zsh-autosuggestions/archive/refs/heads/master.zip"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "168h"
+[".oh-my-zsh/custom/themes/gruvbox.zsh-theme"]
     type = "file"
-    url = "https://github.com/neovim/neovim/releases/download/stable/nvim.appimage"
-    refreshPeriod = "672h"
-    executable = true
-{{ end }}
-{{- if and (eq .chezmoi.os "linux") .personal (not .ephemeral) }}
-{{- $ageVersion := "1.1.1" }}
-[".local/bin/age"]
-    type = "archive-file"
-    url = "https://github.com/FiloSottile/age/releases/download/v{{ $ageVersion }}/age-v{{ $ageVersion }}-{{ .chezmoi.os }}-{{ .chezmoi.arch }}.tar.gz"
-    executable = true
-    path = "age/age"
-[".local/bin/age-keygen"]
-    type = "archive-file"
-    url = "https://github.com/FiloSottile/age/releases/download/v{{ $ageVersion }}/age-v{{ $ageVersion }}-{{ .chezmoi.os }}-{{ .chezmoi.arch }}.tar.gz"
-    executable = true
-    path = "age/age-keygen"
-{{- end }}
-{{- if and (not .ephemeral) (not .headless) }}
-{{-   $fontDir := "" }}
-{{-   if eq .chezmoi.os "darwin" }}
-{{-     $fontDir = "Library/Fonts" }}
-{{-   else if eq .chezmoi.os "linux" }}
-{{-     $fontDir = ".local/share/fonts" }}
-{{-   end }}
-{{-   range (list
-        "MesloLGS NF Regular.ttf"
-        "MesloLGS NF Bold.ttf"
-        "MesloLGS NF Italic.ttf"
-        "MesloLGS NF Bold Italic.ttf") }}
-["{{ $fontDir }}/{{ . }}"]
-    type = "file"
-    url = "https://github.com/romkatv/powerlevel10k-media/raw/master/{{ . }}"
-    refreshPeriod = "168h"
-{{-   end }}
-{{- end }}
+    url = "https://raw.githubusercontent.com/nkzren/gruvbox-zsh/master/gruvbox.zsh-theme"

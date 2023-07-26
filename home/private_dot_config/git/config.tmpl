@@ -1,6 +1,6 @@
 [user]
-	name = Tom Payne
-	email = {{ .email }}
+	name = Luke Hooper
+	email = Laaronhooper@gmail.com
 [advice]
 	addEmptyPathspec = false
 	pushNonFastForward = false
@@ -71,10 +71,6 @@
 	required = true
 [gitget]
 	root = ~/src
-{{ if .personal -}}
-[http]
-	cookiefile = ~/.config/git/cookies
-{{ end -}}
 [init]
 	defaultBranch = "master"
 [pager]
@@ -87,22 +83,12 @@
 	autostash = true
 [receive]
 	fsckobjects = true
-{{ if eq .chezmoi.os "windows" -}}
-[safe]
-	directory = {{ .chezmoi.workingTree }}
-{{ end -}}
 [status]
 	submoduleSummary = true
 [transfer]
 	fsckobjects = true
 [trim]
 	bases = master,gh-pages
-{{- if .personal }}
-[url "git@github.com:chezmoi/"]
-	insteadOf = https://github.com/chezmoi/
-[url "git@github.com:twpayne/"]
-	insteadOf = https://github.com/twpayne/
-{{- end }}
 {{- $ghPath := lookPath "gh" }}
 {{- if $ghPath }}
 [credential "https://github.com"]

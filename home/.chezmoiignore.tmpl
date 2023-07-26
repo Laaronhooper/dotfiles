@@ -3,21 +3,9 @@
 
 {{ if ne .chezmoi.os "darwin" }}
 .chezmoiscripts/darwin/**
-.config/karabiner
 .hammerspoon
 {{ end }}
-
-{{ if ne .chezmoi.os "linux" }}
-.chezmoiscripts/linux/**
-.hushlogin
-.local/bin/nvim
-.local/share/fonts
-{{ end }}
-
-{{ if ne .chezmoi.os "windows" }}
-.chezmoiscripts/windows/**
-Documents
-{{ else }}
+	
 .bash_aliases
 .config/git/cookies
 .gnupg
@@ -31,13 +19,3 @@ Documents
 .tmux.conf
 .zprofile
 .zshrc
-{{ end }}
-
-{{ if not .personal }}
-.pypirc
-.psqlrc
-{{ end }}
-
-{{ if not .flarm }}
-.docker/config.json
-{{ end }}

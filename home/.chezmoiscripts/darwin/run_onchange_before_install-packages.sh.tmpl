@@ -1,63 +1,56 @@
-#!/bin/bash
+#!/bin/bash	
 
 set -eufo pipefail
 
+{{ $taps := list
+     "homebrew/cask-fonts" -}}
+
 {{ $brews := list
      "bat"
+     "bitwarden-cli"
+     "chezmoi"
+     "cmake"
      "curl"
-     "exa"
-     "fd"
-     "ffmpeg"
+     "fzf"
      "gh"
      "git"
-     "git-lfs"
-     "gnu-units"
      "gnupg"
      "go"
      "golangci-lint"
+     "htop"
      "jq"
+     "skhd"
+     "yabai"
+     "neovim"
      "node"
-     "openjdk"
-     "pinentry-mac"
+     "pnpm"
+     "prettier"
+     "protobuf"
      "ripgrep"
+     "thefuck"
      "tmux"
+     "trash"
+     "watchman"
      "wget"
-     "xz"
-     "yt-dlp" -}}
+     "wireshark"
+     "z"
+     "zsh-syntax-highlighting" -}}
 {{ $casks := list
+     "font-jetbrains-mono-nerd-font"
+     "goland"
      "google-chrome"
-     "google-earth-pro"
      "hammerspoon"
-     "iterm2"
-     "karabiner-elements"
-     "spotify"
-     "vagrant"
+     "kitty"
+     "slack"
+     "tailscale"
      "visual-studio-code"
      "vlc" -}}
 
-{{ if eq .chezmoi.arch "amd64" -}}
-{{   $brews = concat $brews (list
-       "shellcheck") -}}
-{{   $casks = concat $casks (list
-       "virtualbox") -}}
-{{ end -}}
-
-{{ if .personal -}}
-{{   $brews = concat $brews (list
-       "postgis"
-       "postgresql"
-       "pspg") -}}
-{{   $casks = concat $casks (list
-       "1password-cli"
-       "balenaetcher"
-       "signal"
-       "telegram"
-       "transmission"
-       "viber"
-       "whatsapp") -}}
-{{ end -}}
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
+{{ range ($taps | sortAlpha | uniq) -}}
+tap "{{ . }}"
+{{ end -}}
 {{ range ($brews | sortAlpha | uniq) -}}
 brew "{{ . }}"
 {{ end -}}
