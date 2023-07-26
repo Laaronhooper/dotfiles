@@ -1,0 +1,8 @@
+HashKnownHosts no
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+
+Host github.com
+  User git
+
