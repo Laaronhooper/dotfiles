@@ -88,7 +88,9 @@
 [transfer]
 	fsckobjects = true
 [trim]
-	bases = master,gh-pages
+  bases = master,gh-pages
+[url "git@github.com:laaronhooper/"]
+	insteadOf = https://github.com/Laaronhooper/
 {{- $ghPath := lookPath "gh" }}
 {{- if $ghPath }}
 [credential "https://github.com"]
