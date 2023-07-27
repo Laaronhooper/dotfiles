@@ -47,5 +47,6 @@ defaults write com.apple.screencapture "disable-shadow" -bool "false"
 defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
 killall Dock
 killall Finder
+
 launchctl setenv KITTY_CONFIG_DIRECTORY $HOME/kitty/
 launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
