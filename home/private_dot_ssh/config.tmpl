@@ -1,11 +1,7 @@
-HashKnownHosts no
-
-{{- if eq .chezmoi.os "darwin" }}
-
-Host *
-  AddKeysToAgent yes
-  UseKeychain yes
-{{- end }}
-
 Host github.com
   User git
+  Hostname github.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_ed25519
+  AddKeysToAgent yes
+
