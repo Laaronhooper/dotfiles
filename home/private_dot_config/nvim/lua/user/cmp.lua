@@ -51,33 +51,33 @@ function M.config()
     local col = vim.fn.col "." - 1
     return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
   end
-
+  
   local kind_icons = {
-    Text = "",
-    Method = "",
-    Function = "",
-    Constructor = "",
+    Text = "",
+    Method = "",
+    Function = "󰊕",
+    Constructor = "",
     Field = "",
     Variable = "",
-    Class = "",
+    Class = "",
     Interface = "",
     Module = "",
     Property = "",
     Unit = "",
-    Value = "",
+    Value = "󰇽",
     Enum = "",
     Keyword = "",
-    Snippet = "",
-    Color = "",
-    File = "",
+    Snippet = "",
+    Color = "",
+    File = "",
     Reference = "",
-    Folder = "",
+    Folder = "",
     EnumMember = "",
-    Constant = "",
+    Constant = "",
     Struct = "",
     Event = "",
-    Operator = "",
-    TypeParameter = "",
+    Operator = "",
+    TypeParameter = "",
   }
 
   cmp.setup {

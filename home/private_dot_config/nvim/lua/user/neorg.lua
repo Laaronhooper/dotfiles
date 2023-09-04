@@ -13,7 +13,8 @@
           ["core.dirman"] = { -- Manages Neorg workspaces
             config = {
               workspaces = {
-                home = "~/.local/share/chezmoi/dot_config/private_neorg/home"
+                work = "~/notes/work",
+                home = "~/notes/home",
               },
             },
           },

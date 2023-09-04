@@ -23,10 +23,10 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)-- Resize with arrows
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)-- Resize with arrows
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)-- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)-- Resize with arrows
-keymap("n", "<C-h>", "<C-w>h", opts)-- Better window navigation
-keymap("n", "<C-j>", "<C-w>j", opts)-- Better window navigation
-keymap("n", "<C-k>", "<C-w>k", opts)-- Better window navigation
-keymap("n", "<C-l>", "<C-w>l", opts)-- Better window navigation
+-- keymap("n", "<C-h>", "<C-w>h", opts)-- Better window navigation
+-- keymap("n", "<C-j>", "<C-w>j", opts)-- Better window navigation
+-- keymap("n", "<C-k>", "<C-w>k", opts)-- Better window navigation
+-- keymap("n", "<C-l>", "<C-w>l", opts)-- Better window navigation
 keymap("n", "<S-h>", ":bprevious<CR>", opts)-- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)-- Navigate buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)-- Close buffers
@@ -46,6 +46,7 @@ keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>",  {desc = "Lazy Git"}
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)-- Clear highlights
 keymap("n", "<leader>l", ":Lazy", {desc = "Lazy"}) -- Lazyvim
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts) -- Lsp
+keymap('n', '<leader>\\', ':ToggleTerm<CR>', opts)
 keymap("v", "<", "<gv", opts) -- Stay in indent mode
 keymap("v", "<S-j>", ":m '>+1<CR>gv=gv")-- Move lines up and dowm)
 keymap("v", "<S-k>", ":m '<-2<CR>gv=gv")-- Move lines up and dowm 

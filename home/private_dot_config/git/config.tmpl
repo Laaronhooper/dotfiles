@@ -45,7 +45,6 @@
 	ss = commit --message snapshot --no-gpg-sign
 	su = submodule update
 	wd = diff --patience --word-diff
-	# https://golang.org/doc/contribute.html
 	change = codereview change
 	gofmt = codereview gofmt
 	mail = codereview mail
@@ -72,7 +71,7 @@
 [gitget]
 	root = ~/src
 [init]
-	defaultBranch = "master"
+	defaultBranch = "main"
 [pager]
 	branch = false
 	grep = false
@@ -89,6 +88,8 @@
 	fsckobjects = true
 [trim]
   bases = master,gh-pages
+[url "git@bitbucket.org:"]
+	insteadOf = https://bitbucket.org/
 [url "git@github.com:laaronhooper/"]
 	insteadOf = https://github.com/Laaronhooper/
 {{- $ghPath := lookPath "gh" }}

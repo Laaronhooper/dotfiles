@@ -6,18 +6,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-{{- $paths := list }}
-{{- $homeDir := .chezmoi.homeDir }}
-{{- range $_, $relPath := list "bin" "go/bin" ".cargo/bin" ".local/bin" }}
-{{    $path := joinPath $homeDir $relPath }}
-{{-   if stat $path }}
-{{-     $paths = mustAppend $paths $path }}
-{{-   end }}
-{{- end }}
-{{- if $paths }}
-export PATH={{ toStrings $paths | join ":" }}:$PATH
-{{- end }}
-
+export PATH=/Users/lukehooper/.local/bin:$PATH
+#Mysql export
+export PATH=/usr/local/mysql/bin:$PATH
 # Load before oh-my-zsh
 fpath+=${ZSH_CUSTOM}/plugins/zsh-completions/src
 
@@ -29,8 +20,6 @@ source ~/.aliases
 source ~/.options
 source ~/z/z.sh
 
-
-
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line if you want to change the command execution time
@@ -40,15 +29,11 @@ HIST_STAMPS="yyyy-mm-dd"
 
 ZSH_DISABLE_COMPFIX=true
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
   per-directory-history
   vi-mode
-  zsh-syntax-highlighting
   zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -58,10 +43,6 @@ source $ZSH/oh-my-zsh.sh
 PROMPT="%{$fg[white]%}%n@%{$fg[green]%}%m%{$reset_color%} ${PROMPT}"
 
 export RIPGREP_CONFIG_PATH=~/.config/ripgrep/config
-
-{{- if lookPath "direnv" }}
-{{ output "direnv" "hook" "zsh" | trim }}
-{{- end }}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -96,14 +77,29 @@ github-clone-code() {
 	fi
 	code "${dir}"
 }
-# PYENV_ROOT
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
 
-{{ if stat (joinPath .chezmoi.homeDir ".nvm") }}
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-{{ end }}
-{{- /* vim: set filetype=zsh: */}}
+# pnpm
+export PNPM_HOME="/Users/lukehooper/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/lukehooper/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/lukehooper/mambaforge/etc/profile.d/conda.sh" ]; then
+        . "/Users/lukehooper/mambaforge/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/lukehooper/mambaforge/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/Users/lukehooper/mambaforge/etc/profile.d/mamba.sh" ]; then
+    . "/Users/lukehooper/mambaforge/etc/profile.d/mamba.sh"
+fi
+# <<< conda initialize <<<

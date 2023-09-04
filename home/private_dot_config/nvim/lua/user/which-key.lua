@@ -17,10 +17,9 @@ function M.config()
   wk.register({
     ["<leader>f"] = { name = "+Files" },
     ["<leader>g"] = { name = "+Git" },
+    ["<leader>l"] = { name = "+Lsp" },
+    ["<leader>\\"] = "Toggle Terminal",
   })
 end
-
-
-
 
 return M
