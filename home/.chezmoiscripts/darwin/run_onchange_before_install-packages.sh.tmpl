@@ -1,0 +1,62 @@
+#!/bin/bash	
+
+set -eufo pipefail
+
+{{ $taps := list
+     "homebrew/cask-fonts" -}}
+
+{{ $brews := list
+     "age"
+     "bat"
+     "bitwarden-cli"
+     "chezmoi"
+     "cmake"
+     "curl"
+     "fzf"
+     "gh"
+     "git"
+     "gnupg"
+     "go"
+     "golangci-lint"
+     "htop"
+     "jq"
+     "lazygit"
+     "neovim"
+     "node"
+     "pnpm"
+     "prettier"
+     "protobuf"
+     "reattach-to-user-namespace"
+     "ripgrep"
+     "skhd"
+     "thefuck"
+     "tmux"
+     "trash"
+     "watchman"
+     "wget"
+     "wireshark"
+     "yabai"
+     "z"
+     "zsh-syntax-highlighting" -}}
+{{ $casks := list
+     "font-jetbrains-mono-nerd-font"
+     "goland"
+     "google-chrome"
+     "kitty"
+     "slack"
+     "tailscale"
+     "visual-studio-code"
+     "vlc" -}}
+
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+{{ range ($taps | sortAlpha | uniq) -}}
+tap "{{ . }}"
+{{ end -}}
+{{ range ($brews | sortAlpha | uniq) -}}
+brew "{{ . }}"
+{{ end -}}
+{{ range ($casks | sortAlpha | uniq) -}}
+cask "{{ . }}"
+{{ end -}}
+EOF

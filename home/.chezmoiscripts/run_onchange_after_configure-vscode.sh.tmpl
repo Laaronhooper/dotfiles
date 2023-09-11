@@ -1,0 +1,21 @@
+{{ if and (eq .chezmoi.os "darwin" "linux") -}}
+
+{{ $extensions := list
+     "asvetliakov.vscode-neovim"
+     "bungcip.better-toml"
+     "eamodio.gitlens"
+     "golang.go"
+     "jinliming2.vscode-go-template"
+     "ms-python.python"
+     "yzhang.markdown-all-in-one"
+     "jdinhlife.gruvbox" -}}
+
+#!/bin/bash
+
+set -eufo pipefail
+
+{{ range $extensions -}}
+code --force --install-extension {{ . }}
+{{ end -}}
+
+{{ end -}}
