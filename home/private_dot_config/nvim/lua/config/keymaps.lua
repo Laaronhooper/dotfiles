@@ -45,6 +45,6 @@ map("n", "<leader>fp", "<cmd>Telescope harpoon marks<cr>", { desc = "Harpoon Mar
 map("n", "<leader>t", "<esc><cmd>lua require('undotree').toggle()<CR>", { desc = "Undotree" })
 
 -- zen-mode
-map("n", "<leader>z", "<esc><cmd>lua require('zen-mode').toggle({window = {width = .90}})<CR>", { desc = "Zen-mode" })
+map("n", "<leader>z", "<esc><cmd>lua require('zen-mode').toggle({window = {width = .8}})<CR>", { desc = "Zen-mode" })
 
 -- general
