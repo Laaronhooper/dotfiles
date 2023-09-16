@@ -1,1 +1,4 @@
-return { "ethanholz/nvim-lastplace" }
+return {
+  "ethanholz/nvim-lastplace",
+  enabled = false,
+}

@@ -24,3 +24,11 @@ Yabai and skhd
 
 ## Extra vim plugins
 - replace harpoon with chentoast/marks.nvim, which-key.nvim and Telescope.
+
+## Todo
+- get localzshhistory to work
+- have neo-tree close if no open buffer
+- get modicator to work
+- decided how to handle my terminal usage
+- not save commands to history that didn't execute
+
