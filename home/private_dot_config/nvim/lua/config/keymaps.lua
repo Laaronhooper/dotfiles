@@ -42,7 +42,7 @@ map("n", "<leader>hm", "<esc><cmd>lua require('harpoon.ui').toggle_quick_menu()<
 map("n", "<leader>fp", "<cmd>Telescope harpoon marks<cr>", { desc = "Harpoon Marks" }) -- Telescope
 
 -- undotree
-map("n", "<leader>t", "<esc><cmd>lua require('undotree').toggle()<CR>", { desc = "Undotree" })
+map("n", "<leader>j", "<esc><cmd>lua require('undotree').toggle()<CR>", { desc = "Undotree" })
 
 -- zen-mode
 map("n", "<leader>z", "<esc><cmd>lua require('zen-mode').toggle({window = {width = .8}})<CR>", { desc = "Zen-mode" })
