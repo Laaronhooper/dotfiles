@@ -4,12 +4,14 @@ alias ....="cd ../../.."
 alias ...="cd ../.."
 alias ..="cd .."
 alias aliasrc="nvim /$HOME/.local/share/chezmoi/home/dot_aliases"
+alias cat='bat'
 alias cfa='chezmoi --force apply; source ~/.zshrc'
 alias chrome='open -a Google\ Chrome'
 alias config='cd /$HOME/.local/share/chezmoi/home/'
 alias fan='open -a Macs\ Fan\ Control'
 alias frappe='kitty +kitten themes --reload-in=all Catppuccin\ Kitty\ Frappe'
-alias gacp='git add .; git commit -m "." --no-verify; git push -f'
+alias gacp='git add .; git commit -m "." --no-verify; git rebase -i main; git push -f'
+alias grnc='git fetch origin main && git rebase --onto origin/main HEAD~1 && git push -f || git rebase --abort'
 alias gfrh='git fetch; git reset --hard FETCH_HEAD'
 alias goland='/usr/local/bin/goland'
 alias grep='grep --color=auto'

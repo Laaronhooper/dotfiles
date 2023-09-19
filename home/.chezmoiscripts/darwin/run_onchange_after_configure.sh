@@ -32,18 +32,34 @@ defaults write com.apple.CrashReporter DialogType none
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.appleseed.FeedbackAssistant Autogather -bool false
+defaults write com.apple.dashboard mcx-disabled -bool true # Disable Dashboard
 defaults write com.apple.dock autohide -bool true
-defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock autohide -bool true # Automatically hide and show the Dock
+defaults write com.apple.dock autohide-delay -float 10000
 defaults write com.apple.dock autohide-time-modifier -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0                    # Remove the animation when hiding/showing the Dock
+defaults write com.apple.dock dashboard-in-overlay -bool true                    # Don’t show Dashboard as a Space
+defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true # Enable spring loading for all Dock items
+defaults write com.apple.dock expose-animation-duration -float 0.1               # Speed up Mission Control animations
+defaults write com.apple.dock expose-group-by-app -bool false                    # Don’t group windows by application in Mission Control
 defaults write com.apple.dock launchanim -bool false
 defaults write com.apple.dock mineffect scale
+defaults write com.apple.dock minimize-to-application -bool true
+defaults write com.apple.dock mouse-over-hilite-stack -bool false
 defaults write com.apple.dock mru-spaces -bool false
 defaults write com.apple.dock orientation bottom
+defaults write com.apple.dock show-process-indicators -bool true # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-recents -bool false
-defaults write com.apple.finder "AppleShowAllFiles" -bool "false"
+defaults write com.apple.dock showhidden -bool true  # Make Dock icons of hidden applications translucent
+defaults write com.apple.dock static-only -bool true # Show only open applications in the Dock
+defaults write com.apple.dock tilesize -int 1
+defaults write com.apple.finder QuitMenuItem -bool true
+
+defaults write com.apple.dock show-recents -bool false
+defaults write com.apple.finder AppleShowAllFiles -bool true
 defaults write com.apple.finder FXPreferredViewStyle clmv
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
-defaults write com.apple.screencapture "disable-shadow" -bool "false"
+defaults write com.apple.screencapture disable-shadow -bool false
 defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
 killall Dock
 killall Finder

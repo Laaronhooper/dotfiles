@@ -32,7 +32,7 @@ ZSH_DISABLE_COMPFIX=true
 
 plugins=(
   per-directory-history
-  vi-mode
+  # vi-mode
   zsh-autosuggestions
   zsh-syntax-highlighting
 )

@@ -39,7 +39,7 @@ map("n", "<leader>h4", "<esc><cmd>lua require('harpoon.ui').nav_next()<CR>", { d
 map("n", "<leader>h4", "<esc><cmd>lua require('harpoon.ui').nav_next()<CR>", { desc = "Previous" })
 map("n", "<leader>ha", "<esc><cmd>lua require('harpoon.mark').add_file()<CR>", { desc = "Add file" })
 map("n", "<leader>hm", "<esc><cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", { desc = "Menu" })
-map("n", "<leader>fp", "<cmd>Telescope harpoon marks<cr>", { desc = "Harpoon Marks" }) -- Telescope
+map("n", "<leader>fm", "<cmd>Telescope harpoon marks<cr>", { desc = "Harpoon Marks" }) -- Telescope
 
 -- undotree
 map("n", "<leader>j", "<esc><cmd>lua require('undotree').toggle()<CR>", { desc = "Undotree" })
@@ -48,3 +48,5 @@ map("n", "<leader>j", "<esc><cmd>lua require('undotree').toggle()<CR>", { desc =
 map("n", "<leader>z", "<esc><cmd>lua require('zen-mode').toggle({window = {width = .8}})<CR>", { desc = "Zen-mode" })
 
 -- general
+map("n", "<leader>fp", "<esc><cmd>Telescope projects<cr>", { desc = "Projects" }) -- Telescope
+map("n", "<leader>fs", "<esc><cmd>ASToggle<cr>", { desc = "Autosave" }) -- Telescope
