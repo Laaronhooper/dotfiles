@@ -1,15 +1,18 @@
 [user]
 	name = Luke Hooper
-	email = Laaronhooper@gmail.com
+	email = luke@canopusnet.com
 [advice]
 	addEmptyPathspec = false
 	pushNonFastForward = false
 	statusHints = false
 [alias]
 	a = add
+	A = add .
 	ap = add -p
 	amc = am --continue
+	ass = "!f() { git add . && git commit -m '.' && git push --force-with-lease && git reset --soft HEAD~1 && git commit --amend --no-edit --allow-empty && git push --force-with-lease; }; f"
 	b = branch
+	bs =  b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
 	bm = branch --merged
 	bnm = branch --no-merged
 	c = clone
@@ -18,20 +21,24 @@
 	cf = commit --fixup
 	cm = commit --message
 	co = checkout
+  conf = "!cat $HOME/.local/share/chezmoi/home/private_dot_config/git/config.tmpl"
 	cob = checkout -b
-	com = checkout master
+  com = checkout main
 	cp = cherry-pick
 	d = diff
 	dc = diff --cached
-	dom = diff origin/master
+  df = "!f() { git branch -d $1 && git push origin --delete $1; }; f"
+	dom = diff origin/main
 	fo = fetch origin
+  frh = !git fetch && git reset --hard FETCH_HEAD
 	fu = "!git log -n 16 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
 	g = grep --line-number
-	mbhom = merge-base HEAD origin/master
+	mbhom = merge-base HEAD origin/main
 	mff = merge --ff-only
 	ol = log --pretty=oneline
 	l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	p = push
+	p = pull
+	P = push
 	pf = push --force-with-lease
 	prb = pull --rebase
 	r = restore
@@ -39,10 +46,13 @@
 	rc = rebase --continue
 	ri = rebase --interactive
 	rl = reflog
-	riom = rebase --interactive origin/master
+	ro = rebase --onto
+  rbs = "!f() { echo fetching...; git fetch; if [ $? -eq 0 ]; then last_status=$(git status --untracked-files=no --porcelain); if [ \"$last_status\" != \"\" ]; then echo stashing local changes...; git stash; else echo nothing to stash...; fi; if [ $? -eq 0 ]; then echo rebasing...; git rebase; if [ $? -eq 0 ]; then if [ \"$last_status\" != \"\" ]; then echo applying stashed changes...; git stash pop; if [ $? -ne 0 ]; then echo STASH POP FAIL - you will need to resolve merge conflicts with git mergetool; fi; fi; else echo REBASE FAILED - you will need to manually run stash pop; fi; fi; fi; if [ $? -ne 0 ]; then echo ERROR: Operation failed; fi; }; f"
+	riom = rebase --interactive origin/main
 	rpo = remote prune origin
 	s = status -sb
 	ss = commit --message snapshot --no-gpg-sign
+  smp = !git stash && git switch main && git pull
 	su = submodule update
 	wd = diff --patience --word-diff
 	change = codereview change
@@ -70,6 +80,8 @@
 	required = true
 [gitget]
 	root = ~/src
+[help]
+  autocorrect = 20
 [init]
 	defaultBranch = "main"
 [pager]

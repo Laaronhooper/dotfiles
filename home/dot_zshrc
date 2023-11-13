@@ -118,3 +118,7 @@ if [ -f "/Users/lukehooper/mambaforge/etc/profile.d/mamba.sh" ]; then
     . "/Users/lukehooper/mambaforge/etc/profile.d/mamba.sh"
 fi
 # <<< conda initialize <<<
+
+# Haskell initialize
+[ -f "/Users/lukehooper/.ghcup/env" ] && source "/Users/lukehooper/.ghcup/env" # ghcup-env
+
