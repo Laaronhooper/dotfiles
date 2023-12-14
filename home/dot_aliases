@@ -4,17 +4,20 @@ alias ....="cd ../../.."
 alias ...="cd ../.."
 alias ..="cd .."
 alias aliasrc="nvim /$HOME/.local/share/chezmoi/home/dot_aliases"
+alias cataliasrc="cat /$HOME/.local/share/chezmoi/home/dot_aliases"
+alias catyabairc='cat /$HOME/.local/share/chezmoi/home/dot_yabairc'
+alias catskhd='cat /$HOME/.local/share/chezmoi/home/dot_skhdrc'
 alias cfa='chezmoi --force apply; source ~/.zshrc'
 alias chrome='open -a Google\ Chrome'
 alias config='cd /$HOME/.local/share/chezmoi/home/'
 alias fan='open -a Macs\ Fan\ Control'
 alias frappe='kitty +kitten themes --reload-in=all Catppuccin\ Kitty\ Frappe'
-alias gacp='git add .; git commit -m "." --no-verify; git push -f'
-alias gfrh='git fetch; git reset --hard FETCH_HEAD'
+alias g="git"
+alias gconf='nvim /$HOME/.local/share/chezmoi/home/private_dot_config/git/config.tmpl'
 alias goland='/usr/local/bin/goland'
 alias grep='grep --color=auto'
 alias gruvdark='kitty +kitten themes --reload-in=all Gruvbox Dark'
-alias gsmp='git stash; git switch main; git pull'
+alias keebflash='qmk compile -c -kb beekeeb/piantor -km manna-harbour_miryoku; qmk flash -c -kb beekeeb/piantor -km manna-harbour_miryoku; qmk compile -c -kb beekeeb/piantor -km manna-harbour_miryoku -e MIRYOKU_ALPHAS=QWERTY -e MIRYOKU_EXTRA=COLEMAKDH -e MIRYOKU_TAP=QWERTY -e MIRYOKU_NAV=INVERTEDT -e MIRYOKU_CLIPBOARD=WIN -e MIRYOKU_LAYERS=FLIP'
 alias kittyrc='nvim /$HOME/.local/share/chezmoi/home/dot_kitty/kitty.conf'
 alias l='ls -lah'
 alias latte='kitty +kitten themes --reload-in=all Catppuccin\ Kitty\ Latte'
@@ -29,5 +32,7 @@ alias pmd="$HOME/pmd-bin-7.0.0-rc3/bin/pmd"
 alias safari='open -a Safari'
 alias skhdrc='nvim /$HOME/.local/share/chezmoi/home/dot_skhdrc'
 alias tmuxrc='nvim /$HOME/.local/share/chezmoi/home/dot_tmux.conf'
+alias yabaicat='cat /$HOME/.local/share/chezmoi/home/dot_yabairc'
 alias yabairc='nvim /$HOME/.local/share/chezmoi/home/dot_yabairc'
 alias zshrc='nvim /$HOME/.local/share/chezmoi/home/dot_zshrc'
+compdef _git co='g checkout'

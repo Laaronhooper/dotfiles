@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e  # Exit on error
+
+# First command
+qmk compile -c -kb beekeeb/piantor -km manna-harbour_miryoku
+
+# Second command
+qmk flash -c -kb beekeeb/piantor -km manna-harbour_miryoku
+
+# Third command
+qmk compile -c -kb beekeeb/piantor -km manna-harbour_miryoku \
+  -e MIRYOKU_ALPHAS=QWERTY \
+  -e MIRYOKU_EXTRA=COLEMAKDH \
+  -e MIRYOKU_TAP=QWERTY \
+  -e MIRYOKU_NAV=INVERTEDT \
+  -e MIRYOKU_CLIPBOARD=WIN \
+  -e MIRYOKU_LAYERS=FLIP

@@ -3,8 +3,9 @@
 set -eufo pipefail
 
 {{ $taps := list
-     "homebrew/cask-fonts" -}}
-
+     "homebrew/cask-fonts"
+     "homebrew/autoupdate"
+     "nextdns/tap" -}}
 {{ $brews := list
      "age"
      "bat"
@@ -12,6 +13,7 @@ set -eufo pipefail
      "chezmoi"
      "cmake"
      "curl"
+     "docker"
      "fzf"
      "gh"
      "git"
@@ -21,14 +23,20 @@ set -eufo pipefail
      "htop"
      "jq"
      "lazygit"
+     "nextdns"
      "neovim"
      "node"
+     "nvm"
+     "mitmproxy"
      "pnpm"
+     "pre-commit"
      "prettier"
      "protobuf"
+     "qmk/qmk/qmk"
      "reattach-to-user-namespace"
      "ripgrep"
      "skhd"
+     "taplo"
      "thefuck"
      "tmux"
      "trash"
@@ -39,11 +47,13 @@ set -eufo pipefail
      "z"
      "zsh-syntax-highlighting" -}}
 {{ $casks := list
+     "chromedriver" 
      "font-jetbrains-mono-nerd-font"
      "goland"
      "google-chrome"
      "kitty"
      "slack"
+     "spacelauncher"
      "tailscale"
      "visual-studio-code"
      "vlc" -}}
